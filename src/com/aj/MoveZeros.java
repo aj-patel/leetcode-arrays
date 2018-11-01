@@ -17,8 +17,8 @@ import java.util.Arrays;
 public class MoveZeros {
 	
 	public static void main(String[] args) {
-		int[] input = {0,1,0,3,0};
-		moveZeroes(input);
+		int[] input = {10,20,40,30,60};
+		moveZeroesOptimized(input);
 		System.out.println(Arrays.toString(input));
 	}
 	
@@ -33,6 +33,20 @@ public class MoveZeros {
 		}
 		for(int i=zeroIndex;i<nums.length;i++){
 			nums[i]=0;
+		}
+	}
+	
+	public static void moveZeroesOptimized(int[] nums) {
+		int zeroIndex=0;
+		if(nums==null) return;
+		int temp=0;
+		for(int i=0;i<nums.length;i++){
+		if(nums[i] !=0){
+				temp = nums[i];
+				nums[i]=nums[zeroIndex];
+				nums[zeroIndex]=temp;
+				zeroIndex++;
+			}
 		}
 	}
 	
