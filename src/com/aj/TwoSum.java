@@ -29,6 +29,7 @@ public class TwoSum {
 	
 	public static int[] twoSum(int[] nums, int target){
 		Map<Integer, Integer> map = new HashMap<>();
+		int[] EMPTY_ARRAY={};
 		for(int i=0;i<nums.length ;i++){
 			if(map.get(target-nums[i]) !=null){
 				return new int[] {map.get(target-nums[i]),i};
@@ -36,7 +37,7 @@ public class TwoSum {
 				map.put(nums[i],i);
 			}
 		}
-		return null;
+		return EMPTY_ARRAY;
 	}
 
 }
